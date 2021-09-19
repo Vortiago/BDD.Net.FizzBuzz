@@ -2,7 +2,7 @@ Feature: The Console Application should output text based on the Fizz buzz rules
 
 Scenario: Numbers divisible by three should have fizz returned.
     Given a <number> as input
-    When that number is divisible by three
+    When that number is divisible by three and not fifteen
     Then the return should be <value>
 
     Examples:
@@ -12,7 +12,7 @@ Scenario: Numbers divisible by three should have fizz returned.
 
 Scenario: Numbers divisible by five should have buzz returned.
     Given a <number> as input
-    When that number is divisible by five
+    When that number is divisible by five and not fifteen
     Then the return should be <value>
 
     Examples:
