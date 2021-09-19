@@ -10,7 +10,6 @@ namespace BDD.Net.FizzBuzz.Tests
     {
         private readonly ScenarioContext _scenarioContext;
         private int input;
-        private string output;
 
         public FizzBuzzValidator(ScenarioContext scenarioContext)
         {
@@ -21,15 +20,19 @@ namespace BDD.Net.FizzBuzz.Tests
         public void GivenANumberAsInput(int number)
         {
             this.input = number;
-            //this.output = value;
         }
 
-        [When(@"that number is divisible by three")]
-        public void WhenThatNumberIsDivisibleByThree()
+        [When(@"that number is divisible by (.*)")]
+        public void WhenThatNumberIsDivisibleBy(string divisibleBy)
         {
         }
 
-        [Then(@"the return (.*) should be fizz")]
+        [When(@"that number is not part of the other rules")]
+        public void WhenThatNumberIsNotPartOfTheOtherRules()
+        {
+        }
+
+        [Then(@"the return should be (.*)")]
         public void ThenTheApplicationShouldReturnFizz(string output)
         {
             var fizzBuzzHandler = new FizzBuzzHandler();
