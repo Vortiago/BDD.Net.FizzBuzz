@@ -27,5 +27,6 @@ Write feature file and run dotnet test.
 Make binding and test code. To check living doc:
 
 ```
+dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
 livingdoc.exe test-assembly .\Tests.dll -t .\TestExecution.json
 ```
